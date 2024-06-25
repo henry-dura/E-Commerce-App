@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/presentation/home_page.dart';
-import 'package:e_commerce_app/presentation/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -12,7 +11,7 @@ class NavigationPage extends StatefulWidget {
 
 class _NavigationPageState extends State<NavigationPage> {
   int _selectedIndex = 0;
-  final displays = [HomePage(), SecondPage()];
+  final displays = [const HomePage(), const HomePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +31,11 @@ class _NavigationPageState extends State<NavigationPage> {
             gap:10,
             tabs: const [
               GButton(
-                icon: Icons.home,
+                icon: Icons.list,
                 text: 'PRODUCTS',
               ),
               GButton(
-                icon: Icons.description,
+                icon: Icons.shopping_cart,
                 text: 'CHECKOUT',
               ),
 

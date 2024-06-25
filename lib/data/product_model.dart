@@ -6,7 +6,7 @@ class ProductModel {
   final String? description;
   final String? category;
   final String? image;
-  var rate;
+  // var rate;
 
 
   ProductModel({
@@ -16,7 +16,7 @@ class ProductModel {
     required this.description,
     required this.category,
     required this.image,
-    required this.rate,
+    // required this.rate,
   });
 
 
@@ -28,8 +28,21 @@ class ProductModel {
       description: json["description"],
       category: json["category"],
       image: json["image"],
-      rate: json["rating"]["rate"],
+      // rate: json["rating"]["rate"],
     );
+  }
+
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'description': description,
+      'price': price,
+      'category': category,
+      'image': image,
+      // 'rate': rate
+    };
   }
 
 }
