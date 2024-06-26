@@ -3,6 +3,7 @@ import 'package:e_commerce_app/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/cart_cubit.dart';
 import 'bloc/favourite_cubit.dart';
 import 'bloc/product_bloc.dart';
 
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
           create: (context) => ProductBloc(ProductRepository())),
         BlocProvider(
           create: (context) => FavouriteCubit()),
+        BlocProvider(
+            create: (context) => CartCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
