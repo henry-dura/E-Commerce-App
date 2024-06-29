@@ -5,11 +5,12 @@ class DetailsPage extends StatelessWidget {
   final String tag;
   final String imageUrl;
   final String description;
+  final String title;
   const DetailsPage(
       {super.key,
       required this.tag,
       required this.imageUrl,
-      required this.description});
+      required this.description, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,8 @@ class DetailsPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(15),
         children:[
+          Text(title,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.green),),
+          SizedBox(height: 12,),
           Container(
             width: 100, // Adjust width as needed
             height: 250, // Adjust height as needed

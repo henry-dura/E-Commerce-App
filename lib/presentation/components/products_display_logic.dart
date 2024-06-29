@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/data/product_model.dart';
-import 'package:e_commerce_app/presentation/components/product_listView.dart';
-import 'package:e_commerce_app/presentation/components/search_city_textfield.dart';
+import 'package:e_commerce_app/presentation/components/product_gridView.dart';
+import 'package:e_commerce_app/presentation/components/search_product_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/product_bloc.dart';
@@ -26,7 +26,7 @@ class ProductsDisplayLogic extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              const SearchCityTextField(),
+              const SearchProductTextField(),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(

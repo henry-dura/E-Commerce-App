@@ -30,13 +30,13 @@ class ActionsIconStack<C extends Cubit<List<dynamic>>> extends StatelessWidget {
           ),
 
           // Like Icon
-          const Positioned(
+          Positioned(
             top: 10,
             right: 30,
             child: Icon(
-              Icons.favorite,
+              iconName,
               size: 40,
-              color: Colors.redAccent,
+              color: iconName == Icons.favorite?Colors.redAccent:Colors.green,
             ),
           ),
 

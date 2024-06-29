@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SearchCityTextField extends StatelessWidget {
-  const SearchCityTextField({
+class SearchProductTextField extends StatelessWidget {
+  const SearchProductTextField({
     super.key,
   });
 
@@ -20,7 +20,7 @@ class SearchCityTextField extends StatelessWidget {
         border: OutlineInputBorder(),
         filled: true,
         fillColor: Colors.black,
-        hintText: 'Search City',
+        hintText: 'Search Product',
         hintStyle: TextStyle(color: Colors.white70),
         prefixIcon: Icon(
           Icons.search,

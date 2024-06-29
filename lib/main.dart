@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/data/product_repository.dart';
-import 'package:e_commerce_app/presentation/home.dart';
+import 'package:e_commerce_app/presentation/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/cart_cubit.dart';
@@ -29,10 +29,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'E-Commerce App',
         theme: ThemeData(
-          primaryColor: Colors.white,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
-          scaffoldBackgroundColor: Colors.black,
+          scaffoldBackgroundColor: Colors.black26,
         ),
         home: const Home(),
       ),

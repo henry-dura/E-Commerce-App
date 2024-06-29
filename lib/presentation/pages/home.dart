@@ -1,12 +1,12 @@
 import 'package:e_commerce_app/bloc/cart_cubit.dart';
 import 'package:e_commerce_app/bloc/favourite_cubit.dart';
 import 'package:e_commerce_app/presentation/components/products_display_logic.dart';
-import 'package:e_commerce_app/presentation/favourites_page.dart';
+import 'package:e_commerce_app/presentation/pages/favourites_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/product_bloc.dart';
+import '../../bloc/product_bloc.dart';
 import 'carted_page.dart';
-import 'components/actions_icon_stack.dart';
+import '../components/actions_icon_stack.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -57,23 +57,28 @@ class _HomeState extends State<Home> {
             tabs: const <Widget>[
               Tab(text: ' All Products '),
               Tab(text: ' Electronics '),
-              Tab(text: ' Jewelry '),
               Tab(text: ' Men Clothing '),
               Tab(text: ' Women Clothing '),
+              Tab(text: ' Jewelry '),
+
 
 
             ],
           ),
         ),
-        body: const TabBarView(children: [
-          ProductsDisplayLogic(),
-          ProductsDisplayLogic(category: "electronics"),
-          ProductsDisplayLogic(category: "jewelery"),
-          ProductsDisplayLogic(category: "men's clothing"),
-          ProductsDisplayLogic(category: "women's clothing"),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5),
+          child: const TabBarView(children: [
+            ProductsDisplayLogic(),
+            ProductsDisplayLogic(category: "electronics"),
+            ProductsDisplayLogic(category: "men's clothing"),
+            ProductsDisplayLogic(category: "women's clothing"),
+            ProductsDisplayLogic(category: "jewelery"),
 
 
-        ]),
+
+          ]),
+        ),
       ),
     );
   }
