@@ -7,9 +7,6 @@ class ProductRepository{
 
   Future <List<ProductModel>> getAllProducts() async => await productApiProvider.fetchProducts();
 
-  Future <void> addProduct(ProductModel product) async => await productApiProvider.addProduct(product);
-
-  Future <void> deleteProduct(int id) async => await productApiProvider.deleteProduct(id);
 
 
 }

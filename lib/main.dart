@@ -1,8 +1,7 @@
 import 'package:e_commerce_app/data/product_repository.dart';
-import 'package:e_commerce_app/presentation/home_page.dart';
+import 'package:e_commerce_app/presentation/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'bloc/cart_cubit.dart';
 import 'bloc/favourite_cubit.dart';
 import 'bloc/product_bloc.dart';
@@ -28,12 +27,14 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'E-Commerce App',
         theme: ThemeData(
+          primaryColor: Colors.white,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
+          scaffoldBackgroundColor: Colors.black,
         ),
-        home: const HomePage(),
+        home: const Home(),
       ),
     );
   }

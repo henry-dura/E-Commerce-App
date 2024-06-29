@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
+class DetailsPage extends StatelessWidget {
   final String tag;
   final String imageUrl;
   final String description;
-  const SecondPage(
+  const DetailsPage(
       {super.key,
       required this.tag,
       required this.imageUrl,
@@ -14,6 +14,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(title: const Text('Product Details'),),
       body: ListView(
         padding: const EdgeInsets.all(15),

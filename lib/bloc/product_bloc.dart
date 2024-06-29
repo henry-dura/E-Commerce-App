@@ -22,35 +22,5 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       }
     });
 
-
-    on<ProductAddEvent>((event, emit) async{
-
-      try {
-        await _productRepository.addProduct(event.product);
-        add(ProductLoadEvent());
-      } catch (e) {
-        emit(ProductErrorState(e.toString()));
-      }
-    });
-
-    on<ProductDeleteEvent>((event, emit) async{
-
-      try {
-        await _productRepository.deleteProduct(event.id);
-        add(ProductLoadEvent());
-      } catch (e) {
-        emit(ProductErrorState(e.toString()));
-      }
-    });
-
-
-
-
   }
-
-
-
-
-
-
 }

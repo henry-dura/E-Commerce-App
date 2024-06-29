@@ -22,24 +22,4 @@ class ProductApiProvider{
   }
 
 
-  Future<void> addProduct(ProductModel product) async {
-    final response = await http.post(
-      Uri.parse('$_baseUrl/products'),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode(product.toJson(),),
-    );
-    if (response.statusCode != 201) {
-      throw Exception('Failed to add product: ${response.statusCode}');
-    }
-  }
-
-
-
-  Future<void> deleteProduct(int id) async {
-    final response = await http.delete(Uri.parse('$_baseUrl/products/$id'));
-    if (response.statusCode != 200) {
-      throw Exception('Failed to delete product');
-    }
-  }
-
 }
