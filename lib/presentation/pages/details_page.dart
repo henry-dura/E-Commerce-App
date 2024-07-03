@@ -20,8 +20,8 @@ class DetailsPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(15),
         children:[
-          Text(title,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.green),),
-          SizedBox(height: 12,),
+          Text(title,style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.green),),
+          const SizedBox(height: 12,),
           Container(
             width: 100, // Adjust width as needed
             height: 250, // Adjust height as needed

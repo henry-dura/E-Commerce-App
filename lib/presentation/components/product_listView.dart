@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/presentation/components/shopping_cart_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../pages/details_page.dart';
 import 'favourite_icon.dart';
-import 'shopping_cart_icon.dart';
+
 
 class ProductsListView<C extends Cubit<List<dynamic>>> extends StatelessWidget {
   const ProductsListView({
@@ -15,7 +15,13 @@ class ProductsListView<C extends Cubit<List<dynamic>>> extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<C, List<dynamic>>(
       builder: (context, state) {
-        return ListView.builder(
+        return state.isEmpty ?const Center(
+            child: Text(
+              'No Item Added  to Favourites',
+              style: TextStyle(
+                fontSize: 25,
+              ),
+            )):ListView.builder(
             itemCount: state.length,
             itemBuilder: (BuildContext context, int index) {
               final product = state[index];
@@ -34,7 +40,7 @@ class ProductsListView<C extends Cubit<List<dynamic>>> extends StatelessWidget {
                             )),
                       );
                     },
-                    child: Container(
+                    child: SizedBox(
                       height: 100,
                       child: Card(
                         shape: RoundedRectangleBorder(
@@ -76,7 +82,7 @@ class ProductsListView<C extends Cubit<List<dynamic>>> extends StatelessWidget {
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               ),
-                              ShoppingCartIcon(product: product)
+                              ShoppingCartButton(product: product)
                             ],
                           ),
                           trailing: FavouriteIcon(product: product,),

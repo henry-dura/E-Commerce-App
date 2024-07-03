@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/product_bloc.dart';
 
 class ProductsDisplayLogic extends StatelessWidget {
-  final category;
-  const ProductsDisplayLogic({super.key, this.category});
+  final String category;
+  const ProductsDisplayLogic({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ProductsDisplayLogic extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
 
         } else if (state is ProductLoadSuccessState) {
-          List<ProductModel> products = category == null
+          List<ProductModel> products = category == "All"
               ? state.products
               : state.products.where((product) => product.category == category).toList();
           return Column(
@@ -40,7 +40,7 @@ class ProductsDisplayLogic extends StatelessWidget {
               const SizedBox(
                 height: 15
               ),
-              ProductListView(products: products),
+              ProductGridView(products: products),
             ],
           );
         } else if (state is ProductErrorState) {

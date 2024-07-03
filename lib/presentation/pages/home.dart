@@ -31,6 +31,7 @@ class _HomeState extends State<Home> {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        backgroundColor: Colors.white30,
         appBar: AppBar(
           title: const Text(
             'Herox Stores',
@@ -47,7 +48,7 @@ class _HomeState extends State<Home> {
             isScrollable: true,
             indicator: BoxDecoration(
                 color: Colors.green, // Change to your desired button color
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(20.0),
                 shape: BoxShape.rectangle
                 // Makes the indicator look like a button
                 ),
@@ -66,16 +67,14 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
-          child: const TabBarView(children: [
-            ProductsDisplayLogic(),
+        body: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          child: TabBarView(children: [
+            ProductsDisplayLogic(category: "All",),
             ProductsDisplayLogic(category: "electronics"),
             ProductsDisplayLogic(category: "men's clothing"),
             ProductsDisplayLogic(category: "women's clothing"),
             ProductsDisplayLogic(category: "jewelery"),
-
-
 
           ]),
         ),

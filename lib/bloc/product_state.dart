@@ -11,6 +11,7 @@ final class ProductLoadSuccessState extends ProductState{
   final List <ProductModel>products;
 
   ProductLoadSuccessState(this.products);
+
 }
 
 final class ProductErrorState extends ProductState{
@@ -18,7 +19,9 @@ final class ProductErrorState extends ProductState{
 
   ProductErrorState(this.errorMessage);
 
-
 }
+
+
+
 
 

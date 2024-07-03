@@ -19,9 +19,9 @@ class SearchProductTextField extends StatelessWidget {
         ),
         border: OutlineInputBorder(),
         filled: true,
-        fillColor: Colors.black,
+        fillColor: Colors.black54,
         hintText: 'Search Product',
-        hintStyle: TextStyle(color: Colors.white70),
+        hintStyle: TextStyle(color: Colors.grey),
         prefixIcon: Icon(
           Icons.search,
           size: 35,
